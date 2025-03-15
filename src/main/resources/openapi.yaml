@@ -1,0 +1,30 @@
+openapi: 3.0.0
+info:
+  title: Vehicle Price Analysis API
+  description: API for analyzing vehicle prices
+  version: 1.0.0
+paths:
+  /vehicles:
+    get:
+      summary: Get all vehicles
+      operationId: getVehicles
+      responses:
+        '200':
+          description: A list of vehicles
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Vehicle'
+components:
+  schemas:
+    Vehicle:
+      type: object
+      properties:
+        id:
+          type: integer
+        make:
+          type: string
+        model:
+          type: string
